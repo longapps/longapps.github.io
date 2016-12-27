@@ -668,7 +668,7 @@
                     top: 50%;
                     left: 50%;
                     pointer-events: none;
-                    background: url("https://longapps.github.io/0.png") no-repeat center center;
+                    background: url("http://www.longapps.com/0.png") no-repeat center center;
                     background-size: 470px 470px;
                     margin: -235px 0 0 -235px;
                     height: 470px;
@@ -692,7 +692,7 @@
                     }
 
                     .spinner .rings .ring.one {
-                        background-image: url("https://longapps.github.io/1.png");
+                        background-image: url("http://www.longapps.com/1.png");
                         -webkit-animation-duration: 70s;
                         animation-duration: 70s;
                         -webkit-animation-direction: reverse;
@@ -700,13 +700,13 @@
                     }
 
                     .spinner .rings .ring.two {
-                        background-image: url("https://longapps.github.io/2.png");
+                        background-image: url("http://www.longapps.com/2.png");
                         -webkit-animation-duration: 190s;
                         animation-duration: 190s;
                     }
 
                     .spinner .rings .ring.three {
-                        background-image: url("https://longapps.github.io/3.png");
+                        background-image: url("http://www.longapps.com/3.png");
                         -webkit-animation-duration: 80s;
                         animation-duration: 80s;
                         -webkit-animation-direction: reverse;
@@ -960,7 +960,7 @@
                 }
 
                 .spinner .map-content .the-map {
-                    background: url(https://longapps.github.io/250.png) no-repeat 0 0;
+                    background: url(http://www.longapps.com/250.png) no-repeat 0 0;
                     background-size: 250px 160px;
                     display: block;
                     margin: 0 0 0 -5px;
@@ -1043,7 +1043,6 @@
                 margin: 15px 40px;
                 width: 120px;
                 height: 120px;
-                background: url("http://www.ganecheng.tech/img/z.png") center center no-repeat;
                 background-size: 100% 100%;
                 opacity: 0.7;
                 -webkit-transition: all 220ms ease-out;
@@ -1570,7 +1569,6 @@
                     transition: all 150ms ease-out;
                     -webkit-transform: scale(0.75);
                     opacity: 0.6;
-                    background: transparent url("http://www.ganecheng.tech/img/logo.png") no-repeat;
                     background-size: 100% 500%;
                 }
 
@@ -2177,8 +2175,7 @@
             }
         }
     </style>
-    <script type="text/javascript" src="http://libs.baidu.com/jquery/2.1.1/jquery.min.js"></script>
-    <script src="javascripts/jquery.min.js"></script>
+    <script type="text/javascript" src="http://www.longapps.com/jquery.min.js"></script>
 </head>
 <body class="loaded">
     <div id="container" class="container modify">
@@ -2322,7 +2319,7 @@
             </div>
             <footer class="home-footer">
                 <p class="copyright">
-                    <a href=mailto:longapps.com@gmail.com>CONTACT US</a>
+                    <a href="mailto:longapps.com@gmail.com" ig="fix">CONTACT US</a>
                 </p>
             </footer>
         </div>
@@ -2368,10 +2365,14 @@
 				bindLinkJump : function() {
 					var body = $('body'), a = document
 							.getElementsByTagName('a');
-					$(a).bind('click', function(e) {
+					$(a).bind('click', function (e) {
 						e.preventDefault();
 						var self = $(this);
 						var link = self.attr('href');
+						if (self.attr('ig')) {
+						    window.location.href = link;
+						    return;
+						}
 						if (self.attr('target')) {
 							window.open(link);
 						} else {
@@ -2392,13 +2393,13 @@
 					selectNav.find('li').bind('mouseenter', function(event) {
 						homePage.spinClass($(this).attr('class'));
 					});
-					previewMini.bind('click', function(event) {
+					previewMini.bind('click', function (event) {
 						data = $(this).attr('data-class');
 						homePage.spinClass(data);
 					});
 
 					// 转盘class操作
-					$.prototype.spinClass = function(_class) {
+					$.prototype.spinClass = function (_class) {
 						$(this).removeClass('show-frontend');
 						$(this).removeClass('show-design');
 						$(this).removeClass('show-diary');
